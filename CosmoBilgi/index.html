@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>  
+
+    <meta charset="UFT-8">
+    <title> Cosmo-bilgi</title>
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+
+    <h1>🌞 Cosmo Bilgi
+ </h1>
+
+ <p>Gök cisimleri hakkın da bilgi ve yorumlar</p>
+
+</body>
+<h2> Güneş</h2>
+<img src="guneş.webp" alt="Guneş" class="sun">
+<div class="info"
+<p>Güneş, Güneş Sistemi'nin merkezinde yer alan ve tüm gezegenleri kütleçekimiyle kontrol eden bir yıldızdır. Kendi enerjisini üreten plazma yapısındaki bu yıldız, hidrojenin helyuma dönüşmesiyle nükleer füzyon reaksiyonları sonucu enerji açığa çıkarır.
+
+Sarı cüce sınıfında olan Güneş, Samanyolu Galaksisi'nde ortalama bir yıldız olarak kabul edilir ve yaklaşık 4,5 milyar yıldır varlığını sürdürmektedir. Dünya'ya en yakın yıldız olması nedeniyle detaylı incelenebilen tek yıldızdır.</p>
+
+</div>
+<h2>MARS</h2>
+<img src="mars.jpg" alt="mars görseli " class="mars">
+<div class="bilgi-kutusu">
+ <P> Mars (Eski Türkçede Bakır Sokım, Merih ), Güneş Sistemi'nin Güneş'ten itibaren dördüncü gezegeni. Roma mitolojisindeki savaş tanrısı Mars'a ithafen adlandırılmıştır. Yüzeyindeki yaygın demir oksitten dolayı kızılımsı bir görünüme sahip olduğu için "Kızıl Gezegen" olarak da bilinmektedir. </P>
+</div>
+<h2> Uranus </h2>
+<img src="uranus.jpg" alt=" uranus " class="uranus">
+<div class ="mavı gezegen ">
+
+<p>  Uranüs, Güneş Sistemi'nde 7. sırada yer alan ve teleskopla keşfedilen ilk gezegen olan buz devi bir gezegendir. Mavi-yeşil rengi, atmosferindeki metan gazından kaynaklanır ve yan yatmış gibi görünen eğik ekseni ile dikkat çeker.
+
+Buz, su, amonyak ve metandan oluşan iç yapısı nedeniyle diğer gaz devlerinden ayrılır. 28 uydusu ve 13 halkası bulunur; halkalar ince ve koyu renklidir.
+
+Güneş etrafındaki dönüşünü 84 yılda tamamlar ve en soğuk atmosfere sahip gezegendir. Voyager 2 uzay aracı, 1986'da Uranüs'ü ziyaret ederek detaylı veriler toplamıştır.</p>
+
+</div>
+
+<div class="gezegen -karti">
+   <h2> Mars</h2>
+   <img src ="mars.jpg" alt="Mars görseli">
+
+   <p> Mars, Güneş Sistemi'nin dördüncü gezegenidir. Kızıl gezegen olarak bilinir.
+</p>
+<button onclick="sesCal()">"Bilgi dinle " </button>
+  
+</div>
+
+
+<audio autoplay loop>
+  <source src="uzay-kesifleri_gece-temasi.mp3_gece-temasi.mp3.mp3" type="audio/mpeg">
+  Tarayıcınız ses öğesini desteklemiyor.
+</audio>
+
+<audio id="marsSes">
+  <source src="gece-temasi.mp3.mp3" type="audio/mpeg" />
+</audio>
+
+<script>
+  function sesCal() {
+    document.getElementById("marsSes").play();
+  }
+</script>
+
+<select id="gezegenSec" onchange="bilgiGuncelle()">
+  <option value="mars">Mars</option>
+  <option value="venus">Venüs</option>
+  <option value="jupiter">Jüpiter</option>
+</select>
+
+<div id="bilgiKutusu">
+  <h2 id="gezegenBaslik">Mars</h2>
+  <img id="gezegenGorsel" src="mars.jpg" alt="Gezegen Görseli" />
+  <p id="gezegenAciklama">Mars, kızıl gezegen olarak bilinir.</p>
+  <audio id="gezegenSes">
+    <source src="mars.mp3" type="audio/mpeg" />
+  </audio>
+  <button onclick="sesCal()">🔊 Dinle</button>
+</div>
+function bilgiGuncelle() {
+  const secilen = document.getElementById("gezegenSec").value;
+
+  const bilgiler = {
+    mars: {
+      baslik: "Mars",
+      gorsel: "mars.jpg",
+      aciklama: "Mars, kızıl gezegen olarak bilinir.",
+      ses: "mars.mp3"
+    },
+    venus: {
+      baslik: "Venüs",
+      gorsel: "venus.jpg",
+      aciklama: "Venüs, en sıcak gezegendir.",
+      ses: "venus.mp3"
+    },
+    jupiter: {
+      baslik: "Jüpiter",
+      gorsel: "jupiter.jpg",
+      aciklama: "Jüpiter, en büyük gezegendir.",
+      ses: "jupiter.mp3"
+    }
+  };
+
+  const secilenBilgi = bilgiler[secilen];
+  document.getElementById("gezegenBaslik").innerText = secilenBilgi.baslik;
+  document.getElementById("gezegenGorsel").src = secilenBilgi.gorsel;
+  document.getElementById("gezegenAciklama").innerText = secilenBilgi.aciklama;
+  document.getElementById("gezegenSes").src = secilenBilgi.ses;
+}
+
+function sesCal() {
+  document.getElementById("gezegenSes").play();
+}
+
+
+
+
+
+
+</html>

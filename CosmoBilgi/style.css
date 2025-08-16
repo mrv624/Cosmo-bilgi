@@ -1,0 +1,33 @@
+
+body {
+  background-color: #0b0c2a;
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.sun{
+  width: 50%;
+  height: auto;
+
+  margin-top: 20px
+;
+}
+.mars {
+  width: 600px;
+  height: 600px;
+
+  
+}
+
+
+
+
+
+.uranus {
+  width: 500px;
+  height: 500px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
